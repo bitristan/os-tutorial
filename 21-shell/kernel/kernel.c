@@ -3,12 +3,14 @@
 #include "kernel.h"
 #include "../libc/string.h"
 
-void main() {
+int main() {
     isr_install();
     irq_install();
 
     kprint("Type something, it will go through the kernel\n"
         "Type END to halt the CPU\n> ");
+
+    return 0;
 }
 
 void user_input(char *input) {
